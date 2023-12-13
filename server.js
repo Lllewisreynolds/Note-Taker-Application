@@ -1,7 +1,5 @@
 // Import Express module/library to handle HTTP requests and responses
 const express = require("express");
-// Import native File System module/library to read/write/manipulate files
-const fs = require("fs");
 /* Inclusion of NPM package hinted at in README
 Providing funcitonality that allows the generation of unique individual IDs for each note when saved */
 const uniqid = require("uniqid");
