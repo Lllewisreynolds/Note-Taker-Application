@@ -5,7 +5,7 @@ Defines our routing infrastructure, directing and handling any incoming HTTP req
 const router = require('express').Router();
 
 // Defines route handler for any GET request (non-specific path - wildcard) by sending index.html static content file to the client
-router.get("*", (req, res) => {
+router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/index.html'));
 });
 // Similar to line above except it has a specific path - indicates that the notes.html file should be displayed when a user makes a GET request to /notes.
