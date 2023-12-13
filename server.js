@@ -7,7 +7,7 @@ Providing funcitonality that allows the generation of unique individual IDs for 
 const uniqid = require("uniqid");
 // Import path module 
 const path = require("path");
-const apiRoutes = require('./routes/apiRoutes');
+// const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes');
 
 /* Port number from which the Express app will listen for incoming HTTP requests 
@@ -29,7 +29,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 /* Modularising my code in respect of separation of concern
 Configuring routing for my Express application - apiRoutes handles requests to the /api endpoint whilst the htmlRoutes handles requests to the root path */
-app.use('/api', apiRoutes);
+// app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 
 /* App.listen method starts up the Express server
