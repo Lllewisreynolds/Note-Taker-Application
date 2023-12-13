@@ -1,6 +1,6 @@
-[
-    {
-        "title":"Test Title",
-        "text":"Test text"
-    }
-]
+/* Changed to an array to accomodate multiple notes - can now append and make use of indexing
+See original - would have to modify as per original syntax as it was a single note as a string
+ */
+{
+    "notes": []
+  }
