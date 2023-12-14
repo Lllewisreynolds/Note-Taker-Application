@@ -78,6 +78,8 @@ With confirmation that the server is launched from the backend, the browser can 
 ![Note Added](./assets/images/Note%20Added.png)
 
 ## Deployed Application
+
+https://noke-take-application-c10c6b265024.herokuapp.com/
       
 ## Questions
       
