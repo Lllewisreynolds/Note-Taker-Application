@@ -7,14 +7,14 @@ const uuidv4 = require('uuid').v4;
 // Importing notes from database
 const { notes } = require('../../db/db');
 // Importing functions from module responsible for handling logic around note creation and retrieval
-const { newNoteCreation, fetchNote } = require('../../lib/notes-logic');
+const { newNoteCreation, fetchNote, deleteNote } = require('../../lib/notes-logic');
 
 // Defining route handler function - retrieving notes data from db and sending back to client as JSON object
 router.get('/notes', (req, res) => {
     res.json(notes);
 });
 
-// Asynchronous route handler function
+// Asynchronous route handler function for POST requests
 router.post('/notes', async (req, res) => {
     // Generating a unique ID for the new note using function imported from uuid module
     const id = uuidv4();
@@ -23,12 +23,20 @@ router.post('/notes', async (req, res) => {
 
     /* 'await' used to ensure that the createNewNote function has completed its task before continuing with sending the JSON response. 
     This ensures that the response is only sent when the note is successfully created */
-    await createNewNote(newNote, notes);
+    await newNoteCreation(newNote, notes);
 
     // Send the created note as a JSON response
     res.json(newNote);
 });
 
-// plan is to use imported fetchNote() function to allow for note deletion - will return to later
+// Asynchronous route handler function for DELETE requests
+router.delete('/notes/:id', async (req, res) => {
+    // Response object contains id of note to be deleted - imported fetchNote() function called to retrieve that note
+    const note = await fetchNote(req.params.id, notes);
+    // Note then deleted if found with other imported function
+    await deleteNote(note, notes);
+    res.json();
+});
+
 
 module.exports = router;
