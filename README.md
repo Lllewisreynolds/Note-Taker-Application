@@ -4,7 +4,7 @@
 
 This application provides the user with a means by which to store notes for organisational and planning purposes, from a professional small business owner perspective.
 
-My task was to connect the frontend of this application (provided as starter code) to the backend through the use of Express.js, along with the saving and retrieval of note data from a JSON file used in lieu of an actual database. This required getting to grips with routing and the handling of some of the key concepts behind CRUD operations: namely, how to handle GET, POST and DELETE requests. These requests are made by the user through the front-end UI. 
+My task was to connect the frontend of this application (provided as starter code) to the backend through the use of Express.js, along with the saving and retrieval of note data from a JSON file used in lieu of an actual database. This required getting to grips with routing and the handling of some of the key concepts behind CRUD operations: namely, how to handle GET, and POST requests. These requests are made by the user through the front-end UI. 
 
 These routes were tested using a desktop application called Insomnia that allows a user to test and debug API routes without the need for a front-end UI. 
 
@@ -70,6 +70,12 @@ A message should then display in the command line saying "App listening at http:
 With confirmation that the server is launched from the backend, the browser can now provide full functionality for the application from the front-end. You can command and click the hyperlink to http://localhost:3001 to navigate straight to the front-end.
 
 ## Screenshots
+
+![Front End](./assets/images/Before%20note%20addition.png)
+
+![Note Creation](./assets/images/Add%20Note.png)
+
+![Note Added](./assets/images/Note%20Added.png)
 
 ## Deployed Application
       

@@ -23,12 +23,19 @@ router.post('/notes', async (req, res) => {
 
     /* 'await' used to ensure that the createNewNote function has completed its task before continuing with sending the JSON response. 
     This ensures that the response is only sent when the note is successfully created */
-    await createNewNote(newNote, notes);
+    await newNoteCreation(newNote, notes);
 
     // Send the created note as a JSON response
     res.json(newNote);
 });
 
 // plan is to use imported fetchNote() function to allow for note deletion - will return to later
+// Unable to get DELETE requests functioning at point of submission - code presented in comment for reference
+
+// router.delete(‘/notes/:id’, async (req, res) => {
+//         const note = await fetchNote(req.params.id, notes);
+//         await deleteNote(note, notes);
+//         res.json();
+//     });
 
 module.exports = router;
